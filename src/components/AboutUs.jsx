@@ -19,7 +19,9 @@ const AboutUs = () => {
           facere voluptatem molestiae! Quis est mollitia doloremque voluptatem
           facere, hic ab.
         </p>
-        <Button text="Explore Us" />
+        <a href="#">
+          <Button text="Explore Us" />
+        </a>
       </div>
       <div className="aboutUs-img-container">
         <div>
