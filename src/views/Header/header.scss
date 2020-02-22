@@ -1,0 +1,94 @@
+section#header_part {
+    position: relative;
+    height: 760px;
+    background-color: #ff0000;
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    } 
+
+    .header_container {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: auto;
+
+        .align_items {
+            align-items: center;
+        }
+
+        .row {
+            display: flex;
+            margin-left: -15px;
+            margin-right: -15px;
+
+            @media (min-width: 992px) {
+                .offset_left {
+                    margin-left: calc(25px/3);
+                    flex: 0 0 50%;
+                }
+            }           
+        }
+
+        .header_text {
+            display: table;
+            width: 100%;
+            height: 760px;
+
+
+            .header_text_inner {
+                display: table-cell;
+                vertical-align: middle;
+
+                h5 {
+                    font-size: 20px;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                    color: #fff;
+                    // margin: 0;
+                    margin-bottom: 38px;
+                }
+
+                h1 {
+                    font-size: 65px;
+                    text-transform: capitalize;
+                    font-weight: 700;
+                    margin-bottom: 27px;
+                    line-height: 75px;
+                    color: #fff;
+                }
+
+                .btn_ex_work {
+                    text-decoration: none;
+                    margin-top: 26px;
+                    display: inline-block;
+                    padding: 27px 70px;
+                    background-color: #00d089;
+                    font-size: 14px;
+                    color: #fff;
+                    transition: .5s;
+                    text-transform: capitalize;
+                    border:1px solid transparent;
+                    border-radius: 50%;
+                    line-height: 15px;
+                }
+
+                @media (min-width: 992px) and (max-width: 1200px) {
+                    h1 {
+                        font-size: 40px;
+                        margin-bottom: 15px;
+                        line-height: 1.4;
+                    }
+                }
+            }
+        }  
+    }
+
+    @media (min-width: 992px) {
+        .header_container {
+            max-width: 960px;
+        }
+    } 
+}
