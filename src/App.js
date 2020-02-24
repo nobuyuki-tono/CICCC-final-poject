@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-import Header from "./views/Header/header.jsx"
+import Header from "./components/Header/Header.jsx"
 
 function App() {
   return (
