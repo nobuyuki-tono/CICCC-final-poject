@@ -1,0 +1,23 @@
+#mask {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: 1;
+}
+#modal {
+    background: #fff;
+    height: 80%;
+    border-radius: 0.25rem;
+
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    right: 0px;
+    margin: 0px auto;
+
+    transition: 0.4s;
+    z-index: 2;
+}
