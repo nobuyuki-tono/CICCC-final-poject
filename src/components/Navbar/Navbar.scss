@@ -48,8 +48,8 @@ header.main_menu {
                     flex-wrap: wrap;
                     align-items: center;
                     justify-content: space-between;
-                    padding: .5rem 1rem;
-                    // padding: 0;
+                    // padding: .5rem 1rem;
+                    padding: 0;
 
                     @media (max-width: 991px) {
                         padding: 20px 0;
@@ -69,6 +69,8 @@ header.main_menu {
                         font-size: 1.25rem;
                         line-height: inherit;
                         white-space: nowrap;
+
+                        color: #fff;
                     }
 
                     .navbar-collapse {
@@ -140,14 +142,47 @@ header.main_menu {
                                     position: relative;
                                     z-index: 1;
 
+                                    &::before {
+                                        position: absolute;
+                                        content: "";
+                                        width: 0;
+                                        bottom: 30px;
+                                        height: 3px;
+                                        background-color: #00d089;
+                                        border-radius: 50px;
+                                        transition: .5s;
+                                    }
+
                                     @media (max-width:991px) {
                                         color: #0042ff;
                                         padding: 5px 15px;
                                     }
+                                    @media (min-width: 992px) {
+                                        &:hover::before {                                        
+                                            width: 52%;                                            
+                                        }
+                                    }
+                                    @media (min-width: 992px) and (max-width: 1200px) {
+                                        padding: 30px 16px;
+
+                                        &::before {                                            
+                                            bottom: 20px;
+                                        }
+                                    }                                                                                               
                                 }
                             }
                         }
                     }
+                    .social_icon {                        
+                        a {
+                            margin-left: 28px;
+                            color: #fff;
+                        }
+
+                        @media (max-width: 991px) {
+                            display: none;
+                        }
+                    }                
                 }
             }
         }
