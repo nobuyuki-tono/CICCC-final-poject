@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 import Message from "./Message/Message";
 import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import IndustryOption from "./IndustryOption"
+import IndustryOption from "./IndustryOption";
+import "./ContactForm.scss";
 
 const ContactForm = () => {
     const [values, setValues] = useState({
-        name: "Shin",
-        email: "autogimmickdoor@yahoo.co.jp",
-        industry: "Agriculture",
-        orderDerscription: "This is the first request",
+        name: "",
+        email: "",
+        industry: "",
+        orderDerscription: "",
         status: "",
         showModal: false
     });
@@ -116,7 +117,7 @@ const ContactForm = () => {
     }
 
     return (
-        <>
+        <section id="form">
             <h2 className="text-center pt-4 pb-4">Contact Us</h2>
             <div className="row">
                 <div className="col-md-6 offset-md-3">
@@ -124,7 +125,7 @@ const ContactForm = () => {
                     {showModal && <Message type={status} handleModal={handleModal} />}
                 </div>
             </div>
-        </>
+        </section>
     );
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import ContactForm from "./components/ContactForm/ContactForm";
+import Footer from "./components/Footer/Footer"
 
 import "./App.css";
 import AboutUs from "./components/AboutUs";
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
       <AboutUs />
       <ContactForm />
+      <Footer />
     </div>
   );
 }
