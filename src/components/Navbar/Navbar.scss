@@ -1,0 +1,155 @@
+header.main_menu {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    z-index: 2;
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        margin: 0 auto;
+
+        @media (min-width: 576px){
+            max-width: 540px;
+        }
+        @media (min-width: 768px){
+            max-width: 720px;
+        }
+        @media (min-width: 992px){
+            max-width: 960px;
+        }
+        @media (min-width: 1200px){
+            max-width: 1170px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+
+            &.align_items {
+                align-items: center;
+            }
+
+            .col-lg-2 {
+                position: relative;
+                width: 100%;
+                padding: 0 15px;
+
+                @media (min-width: 992px) {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+
+                .navbar {
+                    position: relative;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: .5rem 1rem;
+                    // padding: 0;
+
+                    @media (max-width: 991px) {
+                        padding: 20px 0;
+                    }
+
+                    &.navbar-expand-lg {
+                        @media (min-width: 992px) {
+                            flex-flow: row nowrap;
+                            justify-content: flex-start;
+                        }
+                    }
+                    
+                    .navbar-logo {
+                        display: inline-block;
+                        padding: .3125rem 0;
+                        margin-right: 1rem;
+                        font-size: 1.25rem;
+                        line-height: inherit;
+                        white-space: nowrap;
+                    }
+
+                    .navbar-collapse {
+                        flex-basis: 100%; //only for small view
+                        flex-grow: 1;
+                        align-items: center;
+
+                        @media (max-width: 991px) { //for pop up menu
+                            position: absolute;
+                            left: 0;
+                            top: 71px;
+                            width: 100%;
+                            background-color: #fff;
+                            // text-align: center;
+                        }
+                        @media (min-width: 992px) {
+                            display: flex;
+                            flex-basis: auto;
+                        }
+
+                        &.main-menu-item {
+                            text-align: right;
+                            justify-content: right;
+
+                            @media (max-width: 991px) {
+                                text-align: left;
+                            }
+                            @media (min-width: 992px) and (max-width: 1200px) {
+                                padding-left: 25px;
+                            }
+                        }
+
+                        &.justify-content-center {
+                            justify-content: center;
+                        }
+
+                        .navbar-nav {
+                            display: flex;
+                            flex-direction: column;
+                            padding-left: 0;
+                            margin-bottom: 0;
+                            list-style: none;
+
+                            @media (min-width: 992px) {
+                                flex-direction: row;
+                            }
+
+                            &.align_items {
+                                align-items: center;
+
+                                @media (max-width: 991px) {
+                                    align-items: start;
+                                }
+                            }
+
+                            .nav-item {
+                                @media (max-width:991px) {
+                                    padding: 10px 15px;
+                                }
+
+                                .nav-link {
+                                    color: #fff;
+                                    display: block;
+                                    padding: .5rem 1rem;
+                                    font-size: 15px;
+                                    padding: 40px 24px;
+                                    text-transform: capitalize;
+                                    line-height: 15px;
+                                    position: relative;
+                                    z-index: 1;
+
+                                    @media (max-width:991px) {
+                                        color: #0042ff;
+                                        padding: 5px 15px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

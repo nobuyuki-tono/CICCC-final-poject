@@ -9,7 +9,7 @@ const Header = () => {
             <section id="header_part">
                 <div className="header_container">
                     <div className="row align_items">
-                            <div className="offset_left">
+                            <div className="col-lg-1 offset-lg-left">
                                 <div className="header_text">
                                     <div className="header_text_inner">
                                         <h5>We are digital agency</h5>

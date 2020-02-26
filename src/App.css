@@ -6,3 +6,7 @@
 body {
     font-family: open sans,sans-serif;
 }
+a {
+    text-decoration: none;
+    transition: .5s;
+}
