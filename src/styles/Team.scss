@@ -10,4 +10,10 @@
   p {
     font-size: 20px;
   }
+
+  @media (max-width: 500px) {
+    p {
+      font-size: 14px;
+    }
+  }
 }

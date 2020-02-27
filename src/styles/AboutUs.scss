@@ -49,13 +49,13 @@
     .aboutUs-top {
       flex-direction: column;
       justify-content: center;
-      padding: 100px;
-      margin: 100px;
+      padding: 60px;
+      margin: 60px;
     }
 
     .aboutUs-text {
       max-width: 100%;
-      min-width: 300px;
+      min-width: 0 300px;
 
       h2 {
         font-size: 35px;
@@ -75,6 +75,11 @@
         max-width: 100%;
         height: 400px;
       }
+    }
+
+    .aboutUs-card-display {
+      flex-direction: column;
+      margin: auto;
     }
   }
   @media (max-width: 500px) {
