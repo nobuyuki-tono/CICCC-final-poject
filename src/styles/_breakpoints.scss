@@ -20,8 +20,15 @@
    margin-left: 50px;
   }
 
-   @include break(lg) {     -this line overwrite a scss when screen  size is bigger than lg(1080px)
+   @include break(lg, true) {     -this line overwrite a scss when screen  size is smaller than lg(1200px)
      margin-left: auto;
+     margin-right: auto;
+     margin-top: 150px;
+     width: 500px;
+   }
+
+   @include break(mdlg, true, lg) {     -this line overwrite a scss when screen  size is bigger than mdlg(992px)                          
+     margin-left: auto;                  and smaller than lg(1200px)
      margin-right: auto;
      margin-top: 150px;
      width: 500px;
@@ -29,7 +36,7 @@
  }
  -------------------------------- */
 
- @mixin break($size, $isMax: false) {
+ @mixin break($size, $isMax: false, $size2: 0) {
     $breakpoints: (
       xs: 480px, // Extra small screen / phone
       sm: 576px, // Small screen / phone
@@ -40,8 +47,14 @@
   
     @if (map-has-key($breakpoints, $size)) {
       @if ($isMax) {
-        @media (max-width: (map-get($breakpoints, $size) - 1px)) {
-          @content;
+        @if($size2 != 0) {
+            @media (min-width: map-get($breakpoints, $size)) and (max-width: (map-get($breakpoints, $size2) - 1px)) {
+                @content;
+            }
+        } @else {
+          @media (max-width: (map-get($breakpoints, $size) - 1px)) {
+            @content;
+          }
         }
       } @else {
         @media (min-width: map-get($breakpoints, $size)) {

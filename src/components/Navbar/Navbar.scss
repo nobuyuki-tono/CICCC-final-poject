@@ -1,3 +1,4 @@
+@import '../../styles/breakpoints';
 header.main_menu {
     position: absolute;
     top: 0;
@@ -10,16 +11,16 @@ header.main_menu {
         padding: 0 15px;
         margin: 0 auto;
 
-        @media (min-width: 576px){
+        @include break(sm){
             max-width: 540px;
         }
-        @media (min-width: 768px){
+        @include break(md){
             max-width: 720px;
         }
-        @media (min-width: 992px){
+        @include break(mdlg){
             max-width: 960px;
         }
-        @media (min-width: 1200px){
+        @include break(lg){
             max-width: 1170px;
         }
 
@@ -37,7 +38,7 @@ header.main_menu {
                 width: 100%;
                 padding: 0 15px;
 
-                @media (min-width: 992px) {
+                @include break(mdlg) {
                     flex: 0 0 100%;
                     max-width: 100%;
                 }
@@ -51,12 +52,12 @@ header.main_menu {
                     // padding: .5rem 1rem;
                     padding: 0;
 
-                    @media (max-width: 991px) {
+                    @include break(mdlg, true) {
                         padding: 20px 0;
                     }
 
                     &.navbar-expand-lg {
-                        @media (min-width: 992px) {
+                        @include break(mdlg) {
                             flex-flow: row nowrap;
                             justify-content: flex-start;
                         }
@@ -88,7 +89,8 @@ header.main_menu {
                         &:hover {
                           background-color: unset;
                         }
-                      
+                        
+                        //can't use @include
                         @media (max-width: 1024px) {
                           font-size: unset;
                           padding: unset;
@@ -110,11 +112,11 @@ header.main_menu {
 
                         .ti-menu {
                             
-                            @media (max-width: 991px) {
+                            @include break(mdlg, true) {
                                 font-size: 30px;
                                 color: #fff;;
                             }
-                            @media (min-width: 992px) {
+                            @include break(mdlg) {
                                 display: none;
                             }
                         }
@@ -129,7 +131,7 @@ header.main_menu {
                         transition:max-height .35s ease-out;
 
 
-                        @media (max-width: 991px) { //for pop up menu                            
+                        @include break(mdlg, true) { //for pop up menu                            
                             position: absolute;
                             left: 0;
                             top: 71px;
@@ -137,7 +139,7 @@ header.main_menu {
                             background-color: #fff;                                                       
                             // text-align: center;
                         }
-                        @media (min-width: 992px) {
+                        @include break(mdlg) {
                             display: flex;
                             flex-basis: auto;
                         }
@@ -146,10 +148,10 @@ header.main_menu {
                             text-align: right;
                             justify-content: right;
 
-                            @media (max-width: 991px) {
+                            @include break(mdlg, true) {
                                 text-align: left;
                             }
-                            @media (min-width: 992px) and (max-width: 1200px) {
+                            @include break(mdlg, ture, lg) {
                                 padding-left: 25px;
                             }
                         }
@@ -159,7 +161,7 @@ header.main_menu {
                         }
 
                         &.collapse:not(.show) {
-                            @media (max-width: 991px) {
+                            @include break(mdlg, true) {
                                 max-height: 0;                                
                             }
                         }
@@ -183,20 +185,20 @@ header.main_menu {
                             margin-bottom: 0;
                             list-style: none;
 
-                            @media (min-width: 992px) {
+                            @include break(mdlg) {
                                 flex-direction: row;
                             }
 
                             &.align_items {
                                 align-items: center;
 
-                                @media (max-width: 991px) {
+                                @include break(mdlg, true) {
                                     align-items: start;
                                 }
                             }
 
                             .nav-item {
-                                @media (max-width:991px) {
+                                @include break(mdlg, true) {
                                     padding: 10px 15px;
                                 }
 
@@ -235,16 +237,16 @@ header.main_menu {
                                         transition: .5s;
                                     }
 
-                                    @media (max-width:991px) {
+                                    @include break(mdlg, true) {
                                         color: #0042ff;
                                         padding: 5px 15px;
                                     }
-                                    @media (min-width: 992px) {
+                                    @include break(mdlg) {
                                         &:hover::before {                                        
                                             width: 52%;                                            
                                         }
                                     }
-                                    @media (min-width: 992px) and (max-width: 1200px) {
+                                    @include break(mdlg, true, lg) {
                                         padding: 30px 16px;
 
                                         &::before {                                            
@@ -261,7 +263,7 @@ header.main_menu {
                             color: #fff;
                         }
 
-                        @media (max-width: 991px) {
+                        @include break(mdlg, true) {
                             display: none;
                         }
                     }                
