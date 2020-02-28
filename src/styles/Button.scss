@@ -8,6 +8,10 @@ button {
   cursor: pointer;
   transition: all 0.7s ease;
 
+  &:focus {
+    outline: none;
+  }
+
   &:hover {
     background-color: rgb(4, 83, 254);
   }
