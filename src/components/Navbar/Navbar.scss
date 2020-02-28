@@ -73,17 +73,68 @@ header.main_menu {
                         color: #fff;
                     }
 
+                    // to reset button css
+                    button { 
+                        font-size: unset;
+                        padding: unset;
+                        border-radius: unset;
+                        color: unset;
+                        background-color:unset;
+                        width: unset;
+                        cursor: pointer;
+                        transition: unset;
+                        text-transform: none;
+                      
+                        &:hover {
+                          background-color: unset;
+                        }
+                      
+                        @media (max-width: 1024px) {
+                          font-size: unset;
+                          padding: unset;
+                          width: unset;
+                        }
+                    }
+                    //css for button menu
+                    .navbar-toggler {
+                        padding: .25rem .75rem;
+                        font-size: 1.25rem;
+                        line-height: 1;
+                        background-color: transparent;
+                        border: 1px solid transparent;
+                        border-radius: .25rem;
+            
+                        &:focus {
+                            outline: none;
+                        }
+
+                        .ti-menu {
+                            
+                            @media (max-width: 991px) {
+                                font-size: 30px;
+                                color: #fff;;
+                            }
+                            @media (min-width: 992px) {
+                                display: none;
+                            }
+                        }
+                    }
+
                     .navbar-collapse {
-                        flex-basis: 100%; //only for small view
+                        flex-basis: 100%; //for flex item to fit space available in its container
                         flex-grow: 1;
                         align-items: center;
+                        transition: .5s;
+                        overflow: hidden;
+                        transition:max-height .35s ease-out;
 
-                        @media (max-width: 991px) { //for pop up menu
+
+                        @media (max-width: 991px) { //for pop up menu                            
                             position: absolute;
                             left: 0;
                             top: 71px;
-                            width: 100%;
-                            background-color: #fff;
+                            width: 100%;                            
+                            background-color: #fff;                                                       
                             // text-align: center;
                         }
                         @media (min-width: 992px) {
@@ -105,6 +156,24 @@ header.main_menu {
 
                         &.justify-content-center {
                             justify-content: center;
+                        }
+
+                        &.collapse:not(.show) {
+                            @media (max-width: 991px) {
+                                max-height: 0;                                
+                            }
+                        }
+
+                        &.collapsing {    
+                            overflow: hidden;                          
+                            height:0;
+                            transition: height .35s;
+                            height: 200%;                                                     
+                        }
+
+                        &.show {               
+                            height:auto;
+                            max-height: 300px;
                         }
 
                         .navbar-nav {
@@ -129,6 +198,19 @@ header.main_menu {
                             .nav-item {
                                 @media (max-width:991px) {
                                     padding: 10px 15px;
+                                }
+
+                                &.dropdown .dropdown-toggle {
+                                    &::after {
+                                        display: inline-block;
+                                        margin-left: .3em;
+                                        vertical-align: .1em;
+                                        content: "";
+                                        border-top: .3em solid;
+                                        border-bottom: 0;
+                                        border-right: .3em solid transparent;
+                                        border-left: .3em solid transparent;                                        
+                                    }
                                 }
 
                                 .nav-link {
