@@ -1,3 +1,5 @@
+@import '../../styles/breakpoints';
+
 section#header_part {
     position: relative;
     overflow: hidden;
@@ -5,9 +7,12 @@ section#header_part {
     background: url(https://colorlib.com/preview/theme/dizzi/img/banner_img.png) center no-repeat;
     z-index: 1;
 
-    @media (max-width: 1200px) {
+    @include break(lg, true) {
         height: 650px; //responsive
     }
+    // @media (max-width: 1200px) {
+    //     height: 650px; //responsive
+    // }
 
     &:after {
         position: absolute;

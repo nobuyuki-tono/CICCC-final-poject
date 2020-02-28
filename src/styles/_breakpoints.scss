@@ -35,7 +35,7 @@
       sm: 576px, // Small screen / phone
       md: 768px, // Medium screen / tablet
       mdlg: 992px, // Medium large screen / desktop narrow
-      lg: 1200px, // Large screen / desktop
+      lg: 1200px // Large screen / desktop
     );
   
     @if (map-has-key($breakpoints, $size)) {
