@@ -1,0 +1,274 @@
+@import '../../styles/breakpoints';
+header.main_menu {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    z-index: 2;
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        margin: 0 auto;
+
+        @include break(sm){
+            max-width: 540px;
+        }
+        @include break(md){
+            max-width: 720px;
+        }
+        @include break(mdlg){
+            max-width: 960px;
+        }
+        @include break(lg){
+            max-width: 1170px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+
+            &.align_items {
+                align-items: center;
+            }
+
+            .col-lg-2 {
+                position: relative;
+                width: 100%;
+                padding: 0 15px;
+
+                @include break(mdlg) {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+
+                .navbar {
+                    position: relative;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-between;
+                    // padding: .5rem 1rem;
+                    padding: 0;
+
+                    @include break(mdlg, true) {
+                        padding: 20px 0;
+                    }
+
+                    &.navbar-expand-lg {
+                        @include break(mdlg) {
+                            flex-flow: row nowrap;
+                            justify-content: flex-start;
+                        }
+                    }
+                    
+                    .navbar-logo {
+                        display: inline-block;
+                        padding: .3125rem 0;
+                        margin-right: 1rem;
+                        font-size: 1.25rem;
+                        line-height: inherit;
+                        white-space: nowrap;
+
+                        color: #fff;
+                    }
+
+                    // to reset button css
+                    button { 
+                        font-size: unset;
+                        padding: unset;
+                        border-radius: unset;
+                        color: unset;
+                        background-color:unset;
+                        width: unset;
+                        cursor: pointer;
+                        transition: unset;
+                        text-transform: none;
+                      
+                        &:hover {
+                          background-color: unset;
+                        }
+                        
+                        //can't use @include
+                        @media (max-width: 1024px) {
+                          font-size: unset;
+                          padding: unset;
+                          width: unset;
+                        }
+                    }
+                    //css for button menu
+                    .navbar-toggler {
+                        padding: .25rem .75rem;
+                        font-size: 1.25rem;
+                        line-height: 1;
+                        background-color: transparent;
+                        border: 1px solid transparent;
+                        border-radius: .25rem;
+            
+                        &:focus {
+                            outline: none;
+                        }
+
+                        .ti-menu {
+                            
+                            @include break(mdlg, true) {
+                                font-size: 30px;
+                                color: #fff;;
+                            }
+                            @include break(mdlg) {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .navbar-collapse {
+                        flex-basis: 100%; //for flex item to fit space available in its container
+                        flex-grow: 1;
+                        align-items: center;
+                        transition: .5s;
+                        overflow: hidden;
+                        transition:max-height .35s ease-out;
+
+
+                        @include break(mdlg, true) { //for pop up menu                            
+                            position: absolute;
+                            left: 0;
+                            top: 71px;
+                            width: 100%;                            
+                            background-color: #fff;                                                       
+                            // text-align: center;
+                        }
+                        @include break(mdlg) {
+                            display: flex;
+                            flex-basis: auto;
+                        }
+
+                        &.main-menu-item {
+                            text-align: right;
+                            justify-content: right;
+
+                            @include break(mdlg, true) {
+                                text-align: left;
+                            }
+                            @include break(mdlg, ture, lg) {
+                                padding-left: 25px;
+                            }
+                        }
+
+                        &.justify-content-center {
+                            justify-content: center;
+                        }
+
+                        &.collapse:not(.show) {
+                            @include break(mdlg, true) {
+                                max-height: 0;                                
+                            }
+                        }
+
+                        &.collapsing {    
+                            overflow: hidden;                          
+                            height:0;
+                            transition: height .35s;
+                            height: 200%;                                                     
+                        }
+
+                        &.show {               
+                            height:auto;
+                            max-height: 300px;
+                        }
+
+                        .navbar-nav {
+                            display: flex;
+                            flex-direction: column;
+                            padding-left: 0;
+                            margin-bottom: 0;
+                            list-style: none;
+
+                            @include break(mdlg) {
+                                flex-direction: row;
+                            }
+
+                            &.align_items {
+                                align-items: center;
+
+                                @include break(mdlg, true) {
+                                    align-items: start;
+                                }
+                            }
+
+                            .nav-item {
+                                @include break(mdlg, true) {
+                                    padding: 10px 15px;
+                                }
+
+                                &.dropdown .dropdown-toggle {
+                                    &::after {
+                                        display: inline-block;
+                                        margin-left: .3em;
+                                        vertical-align: .1em;
+                                        content: "";
+                                        border-top: .3em solid;
+                                        border-bottom: 0;
+                                        border-right: .3em solid transparent;
+                                        border-left: .3em solid transparent;                                        
+                                    }
+                                }
+
+                                .nav-link {
+                                    color: #fff;
+                                    display: block;
+                                    padding: .5rem 1rem;
+                                    font-size: 15px;
+                                    padding: 40px 24px;
+                                    text-transform: capitalize;
+                                    line-height: 15px;
+                                    position: relative;
+                                    z-index: 1;
+
+                                    &::before {
+                                        position: absolute;
+                                        content: "";
+                                        width: 0;
+                                        bottom: 30px;
+                                        height: 3px;
+                                        background-color: #00d089;
+                                        border-radius: 50px;
+                                        transition: .5s;
+                                    }
+
+                                    @include break(mdlg, true) {
+                                        color: #0042ff;
+                                        padding: 5px 15px;
+                                    }
+                                    @include break(mdlg) {
+                                        &:hover::before {                                        
+                                            width: 52%;                                            
+                                        }
+                                    }
+                                    @include break(mdlg, true, lg) {
+                                        padding: 30px 16px;
+
+                                        &::before {                                            
+                                            bottom: 20px;
+                                        }
+                                    }                                                                                               
+                                }
+                            }
+                        }
+                    }
+                    .social_icon {                        
+                        a {
+                            margin-left: 28px;
+                            color: #fff;
+                        }
+
+                        @include break(mdlg, true) {
+                            display: none;
+                        }
+                    }                
+                }
+            }
+        }
+    }
+}
