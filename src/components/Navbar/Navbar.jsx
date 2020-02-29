@@ -34,7 +34,7 @@ const Navbar = () => {
                 <div className="row align_items">
                     <div className="col-lg-2">
                         <nav className="navbar navbar-expand-lg">
-                            <a href="#" className="navbar-logo">
+                            <a href="/" className="navbar-logo">
                                 <h3>LOGO</h3>
                             </a>
                             <button className="navbar-toggler" onClick={ToggleNavigation}>
@@ -49,16 +49,16 @@ const Navbar = () => {
                                         <a href="#aboutus" className="nav-link">about</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="#service" className="nav-link">service</a>
+                                        <a href="#service" className="nav-link">works</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="#blog" className="nav-link">blog</a>
+                                        <a href="#team" className="nav-link">team</a>
                                     </li>
                                     <li className="nav-item dropdown">
                                         <a href="#pages" className="nav-link dropdown-toggle">pages</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="#contact" className="nav-link">contact</a>
+                                        <a href="#form" className="nav-link">contact</a>
                                     </li>
                                 </ul>
                             </div>
