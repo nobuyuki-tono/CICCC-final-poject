@@ -1,15 +1,15 @@
 import React from "react";
 
-import Button from "./Button";
+import Button from "../Button";
 import AboutUsCard from "./AboutUsCard";
 
-import AboutUsImg2 from "../img/AboutUs-img2.jpg";
+import AboutUsImg2 from "../../img/AboutUs-img2.jpg";
 
-import "../styles/AboutUs.scss";
+import "./AboutUs.scss";
 
 const AboutUs = () => {
   return (
-    <div className="aboutUs">
+    <section className="aboutUs">
       <div className="aboutUs-top">
         <div className="aboutUs-text">
           <h3>About Us</h3>
@@ -50,7 +50,7 @@ const AboutUs = () => {
           tech={["hello", "oGoddby"]}
         />
       </div>
-    </div>
+    </section>
   );
 };
 
