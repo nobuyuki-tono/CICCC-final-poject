@@ -12,6 +12,7 @@
         }
         h4 {
             margin-bottom: 20px;
+            color: #02d089;
         }
         ul {
             list-style: none;
@@ -48,6 +49,30 @@
             .snsIcon {
                 width: 50px;
                 font-size: 50px;
+            }
+            .fa-facebook-square {
+                transition: all 0.2s;
+                &:hover {
+                    color: #3b5998;
+                }
+            }
+            .fa-twitter-square {
+                transition: all 0.2s;
+                &:hover {
+                    color: #00acee;
+                }
+            }
+            .fa-instagram {
+                transition: all 0.2s;
+                &:hover {
+                    color: #3f729b;
+                }
+            }
+            .fa-linkedin-square {
+                transition: all 0.2s;
+                &:hover {
+                    color: #0e76a8;
+                }
             }
         }
     }

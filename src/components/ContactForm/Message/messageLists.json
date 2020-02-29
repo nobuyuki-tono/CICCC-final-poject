@@ -2,19 +2,19 @@
     {
         "type": "error",
         "title": "Sorry, There is something worng...",
-        "titleColor": "danger",
-        "message": "Could you try this later or Could you call or email us directly? TEL: 000-000-0000 EMAIL: xxxxx@gmail.com</p>"
+        "titleColor": "text-danger",
+        "message": "Could you try this later or Could you call or email us directly?<br />TEL: 000-000-0000<br />EMAIL: xxxxx@gmail.com"
     },
     {
         "type": "success",
         "title": "Thank you!",
-        "titleColor": "success",
+        "titleColor": "text-success",
         "message": "We will contact you later!"
     },
     {
         "type": "isSending",
         "title": "Sending...",
-        "titleColor": "",
+        "titleColor": "text-primary",
         "message": "It would take time, it depends on a network system or mailing system."
     }
 ]
