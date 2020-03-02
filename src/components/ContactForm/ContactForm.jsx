@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import Message from "./Message/Message";
-import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Col, Row, Form, FormGroup, Label, Input } from 'reactstrap';
 import IndustryOption from "./IndustryOption";
 import "./ContactForm.scss";
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Button from "../Button";
+
 
 const ContactForm = () => {
     const [values, setValues] = useState({
@@ -47,7 +50,7 @@ const ContactForm = () => {
             email: "",
             industry: "",
             orderDerscription: "",
-            status: "success",
+            status: "error",
             showModal: true
         });
     }
@@ -84,7 +87,7 @@ const ContactForm = () => {
                         <Label for="industry" md={12}>Industry</Label>
                         <Col md={12}>
                         <Input onChange={handleChange("industry")} type="select" name="industry" id="industry" value={industry} >
-                            <option value="" selected disabled hidden>Choose your industry</option>
+                            <option value="" defaultValue disabled hidden>Choose your industry</option>
                             <IndustryOption />
                         </Input>
                         </Col>
@@ -102,7 +105,7 @@ const ContactForm = () => {
                 <Row form>
                     <Col md={12}>
                     <FormGroup>
-                        <Button color="primary" block>Send</Button>
+                        <Button className="fromButton" text="Send">Send</Button>
                     </FormGroup>
                     </Col>
                 </Row>
@@ -111,14 +114,12 @@ const ContactForm = () => {
     };
 
     const handleModal = () => {
-        console.log("hi");
         setValues({...values, status: "", showModal: false});
-
     }
 
     return (
         <section id="form">
-            <h2 className="text-center pt-4 pb-4">Contact Us</h2>
+            <h3 className="text-center pt-4 pb-4">Contact Us</h3>
             <div className="row">
                 <div className="col-md-6 offset-md-3">
                     {ContactForm()}

@@ -3,7 +3,7 @@ import "./Footer.scss"
 
 const Footer = () => {
     return (
-        <section id="footer">
+        <footer id="footer">
             <div id="info">
                 <div className="compInfo">
                     <h4>Webravo</h4>
@@ -39,8 +39,8 @@ const Footer = () => {
                     </ul>
                 </div>
             </div>
-            <p id="copyright">Copyright &copy;{new Date().getFullYear()} All rights reserved</p>
-        </section>
+            <p id="copyright">Copyright <time>&copy;{new Date().getFullYear()}</time> All rights reserved</p>
+        </footer>
     );
 }
 
