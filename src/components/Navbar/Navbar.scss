@@ -161,6 +161,7 @@ header.main_menu {
                         }
 
                         &.collapse:not(.show) {
+                            display: unset;
                             @include break(mdlg, true) {
                                 max-height: 0;                                
                             }
