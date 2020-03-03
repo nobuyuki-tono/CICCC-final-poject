@@ -8,6 +8,7 @@ import Team from "./components/Team/Team";
 
 import Header from "./components/Header/Header.jsx";
 import Navbar from "./components/Navbar/Navbar";
+import Work from "./components/Work/Work";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <Header />
       <AboutUs />
+      <Work />
       <Team />
       <ContactForm />
       <Footer />

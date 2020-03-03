@@ -1,0 +1,169 @@
+@import '../../styles/breakpoints';
+
+section#our_project {
+    position: relative;
+
+    &.section_padding {
+        padding: 140px 0;
+
+        @include break(mdlg, true, lg) {
+            padding: 80px 0;
+        }
+        @include break(mdlg, true) {
+            padding: 70px 0;
+        }
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        margin: auto;
+
+        @include break(sm) {
+            max-width: 540px;
+        }
+        @include break(md) {
+            max-width: 720px;
+        }
+        @include break(mdlg) {
+            max-width: 960px;
+        }
+        @include break(lg) {
+            max-width: 1170px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+
+            &.align_items {
+                align-items: center;
+            }
+
+            &.justify-content-between {
+                justify-content: space-between;
+            }
+
+            .col-lg-3{
+                position: relative;
+                width: 100%;
+                padding: 0 15px;
+
+                @include break(mdlg) {
+                    flex: 0 0 calc(100%/3);
+                    max-width: calc(100%/3);
+                }
+
+                .section-title {
+                    margin-bottom: 80px;
+
+                    @include break(mdlg, true) {
+                        margin-bottom: 20px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        color: #00d089;
+                        text-transform: capitalize;
+                        margin-bottom: 15px;
+
+                        @include break(mdlg, true) {
+                            margin-bottom: 0px;
+                        }
+                        @include break(mdlg, ture, lg) {
+                            margin-bottom: 10px;
+                        }
+                    }
+
+                    h2{
+                        font-size: 46px;
+                        line-height: 46px;
+                        text-transform: capitalize;
+
+                        @include break(md, true) {
+                            font-size: 25px;
+                            line-height: 35px;
+                        }
+                        @include break(md, true, mdlg) {
+                            font-size: 30px;
+                            line-height: 40px;
+                        }
+                        @include break(mdlg, true, lg) {
+                            font-size: 35px;
+                            line-height: 40px;
+                        }
+
+                    }
+                }
+            }
+            .col-lg-4{
+                position: relative;
+                width: 100%;
+                padding: 0 15px;
+
+                @include break(md) {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+                @include break(mdlg) {
+                    flex: 0 0 calc(100%/2.4);
+                    max-width: calc(100%/2.4);
+                }
+
+                .filters {
+
+                    &.project_menu_item {
+                        @include break(mdlg, true) {
+                            margin: 0 0 20px;
+                        }
+                    }
+
+                    ul {
+                        list-style: none;
+                        
+                        li {
+                            display: inline-block;
+                            color: #83868c;
+                            font-size: 15px;
+                            text-transform: capitalize;
+                            margin: 0 22px;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: #00d089;
+                            }
+
+                            @include break(mdlg, true) {
+                                margin: 0 8px;
+                            }
+                        }
+                    }
+                }
+            }
+            .col-lg-5{
+                position: relative;
+                width: 100%;
+                padding: 0 15px;
+
+                @include break(md) {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+                @include break(mdlg) {
+                    flex: 0 0 calc(100%/4);
+                    max-width: calc(100%/4);
+                }
+
+                .more_btn {
+                    .more_btn_inner {
+
+                    }
+                }
+            }
+        }
+        .filters-content {
+            display: unset;
+        }
+    }
+}
