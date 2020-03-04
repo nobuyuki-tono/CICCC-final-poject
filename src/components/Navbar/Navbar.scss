@@ -160,8 +160,7 @@ header.main_menu {
                             justify-content: center;
                         }
 
-                        &.collapse:not(.show) {
-                            display: unset;
+                        &.collapse:not(.show) {                            
                             @include break(mdlg, true) {
                                 max-height: 0;                                
                             }

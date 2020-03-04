@@ -9,6 +9,7 @@ import Team from "./components/Team/Team";
 import Header from "./components/Header/Header.jsx";
 import Navbar from "./components/Navbar/Navbar";
 import Work from "./components/Work/Work";
+import Any from "./components/Work/any"
 
 function App() {
   return (
@@ -17,9 +18,10 @@ function App() {
       <Header />
       <AboutUs />
       <Work />
+      <Any />
       <Team />
       <ContactForm />
-      <Footer />
+      <Footer />      
     </div>
   );
 }

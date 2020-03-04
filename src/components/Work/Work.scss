@@ -64,6 +64,7 @@ section#our_project {
 
                     p {
                         font-size: 16px;
+                        line-height: 2;
                         color: #00d089;
                         text-transform: capitalize;
                         margin-bottom: 15px;
@@ -80,6 +81,7 @@ section#our_project {
                         font-size: 46px;
                         line-height: 46px;
                         text-transform: capitalize;
+                        margin: 0 0 .5rem;
 
                         @include break(md, true) {
                             font-size: 25px;
@@ -98,7 +100,7 @@ section#our_project {
                 }
             }
             .col-lg-4{
-                position: relative;
+                position: relative; //should use css instead of scss if use same style again
                 width: 100%;
                 padding: 0 15px;
 
@@ -134,6 +136,10 @@ section#our_project {
                                 color: #00d089;
                             }
 
+                            &.active {
+                                color: #00d089;
+                            }
+
                             @include break(mdlg, true) {
                                 margin: 0 8px;
                             }
@@ -156,8 +162,33 @@ section#our_project {
                 }
 
                 .more_btn {
-                    .more_btn_inner {
+                    line-height: 1.5;
 
+                    &.d-none {
+                        display: none;
+                    }
+
+                    &.d-md-block {
+                        @include break(md) {
+                            display: block;
+                        }
+                    }
+
+                    .more_btn_inner {
+                        display: inline-block;
+                        border: 1px solid #00d089;                        
+                        padding: 15px 40px;                        
+                        color: #00d089;    
+                        font-size: 15px;                    
+                        text-transform: capitalize;                                          
+                        border-radius: 50px;
+                        transition: .5s;
+
+                        @include break(mdlg, true) {
+                            padding: 8px 24px;
+                            margin: 0 0 25px;
+                            float: right;
+                        }
                     }
                 }
             }
