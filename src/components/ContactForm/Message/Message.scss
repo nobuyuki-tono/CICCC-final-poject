@@ -9,15 +9,19 @@
 }
 #modal {
     background: #fff;
-    height: 80%;
+    height: 100%;
     border-radius: 0.25rem;
 
     position: absolute;
-    top: 40px;
+    top: 0px;
     left: 0px;
     right: 0px;
     margin: 0px auto;
 
-    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
     z-index: 2;
 }
