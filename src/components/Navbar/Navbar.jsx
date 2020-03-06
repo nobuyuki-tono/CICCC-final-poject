@@ -3,6 +3,20 @@ import "./Navbar.scss";
 import "../../themify-icon/themify-icons.css"
 
 const Navbar = () => {
+    // for fixed menu bar
+    // I used window.pageYOffset instead of scrollTop
+    window.onscroll = () => {
+        let menu = document.getElementsByClassName('main_menu')[0];  
+              
+        if (window.pageYOffset > 148) {
+            menu.classList.add("menu_fixed");
+            menu.classList.add("animate");
+        } else {
+            menu.classList.remove("menu_fixed");
+            menu.classList.remove("animate");
+        }
+      }
+
     //for using ref
     const navMenu = useRef(null);
 
@@ -10,25 +24,10 @@ const Navbar = () => {
         const elem = navMenu.current.classList;
         elem.toggle('show')                
         console.log(navMenu.current)
-    }
-
-    // const addClass = (elem) => {
-    //     elem.remove('collapse')
-    //     elem.add('collapsing')
-    //     elem.style.background = 'red';
-
-    //     setTimeout(() => {
-    //         if(!elem.contains('collapse')){
-    //             elem.remove('collapsing')
-    //             elem.add('collapse')
-    //             console.log('work!')
-    //         }
-    //     }, 350)        
-    //     console.log('fuck u')
-    // }
+    }    
 
    return(
-       <>
+       <>        
         <header className="main_menu">
             <div className="container">
                 <div className="row align_items">
@@ -43,22 +42,22 @@ const Navbar = () => {
                             <div ref={navMenu} className="navbar-collapse main-menu-item justify-content-center collapse">
                                 <ul className="navbar-nav align_items">
                                     <li className="nav-item">
-                                        <a href="#header_part" className="nav-link">home</a>
+                                        <a href="#header_part" className="nav-link" onClick={ToggleNavigation}>home</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="#aboutus" className="nav-link">about</a>
+                                        <a href="#aboutus" className="nav-link" onClick={ToggleNavigation}>about</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="#our_project" className="nav-link">works</a>
+                                        <a href="#our_project" className="nav-link" onClick={ToggleNavigation}>works</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="#team" className="nav-link">team</a>
+                                        <a href="#team" className="nav-link" onClick={ToggleNavigation}>team</a>
                                     </li>
                                     <li className="nav-item dropdown">
-                                        <a href="#pages" className="nav-link dropdown-toggle">pages</a>
+                                        <a href="#pages" className="nav-link dropdown-toggle" onClick={ToggleNavigation}>pages</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="#form" className="nav-link">contact</a>
+                                        <a href="#form" className="nav-link" onClick={ToggleNavigation}>contact</a>
                                     </li>
                                 </ul>
                             </div>
