@@ -1,0 +1,348 @@
+@import '../../styles/breakpoints';
+
+section#our_project {
+    position: relative;
+
+    &.section_padding {
+        padding: 140px 0;
+
+        @include break(mdlg, true, lg) {
+            padding: 80px 0;
+        }
+        @include break(mdlg, true) {
+            padding: 70px 0;
+        }
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        margin: auto;
+
+        @include break(sm) {
+            max-width: 540px;
+        }
+        @include break(md) {
+            max-width: 720px;
+        }
+        @include break(mdlg) {
+            max-width: 960px;
+        }
+        @include break(lg) {
+            max-width: 1170px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+
+            &.align_items {
+                align-items: center;
+            }
+
+            &.justify-content-between {
+                justify-content: space-between;
+            }
+
+            .col-lg-3{
+                position: relative;
+                width: 100%;
+                padding: 0 15px;
+
+                @include break(mdlg) {
+                    flex: 0 0 calc(100%/3);
+                    max-width: calc(100%/3);
+                }
+
+                .section-title {
+                    margin-bottom: 80px;
+
+                    @include break(mdlg, true) {
+                        margin-bottom: 20px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        line-height: 2;
+                        color: #00d089;
+                        text-transform: capitalize;
+                        margin-bottom: 15px;
+
+                        @include break(mdlg, true) {
+                            margin-bottom: 0px;
+                        }
+                        @include break(mdlg, ture, lg) {
+                            margin-bottom: 10px;
+                        }
+                    }
+
+                    h2{
+                        font-size: 46px;
+                        line-height: 46px;
+                        font-weight: 700;
+                        text-transform: capitalize;
+                        margin: 0 0 .5rem;
+
+                        @include break(md, true) {
+                            font-size: 25px;
+                            line-height: 35px;
+                        }
+                        @include break(md, true, mdlg) {
+                            font-size: 30px;
+                            line-height: 40px;
+                        }
+                        @include break(mdlg, true, lg) {
+                            font-size: 35px;
+                            line-height: 40px;
+                        }
+
+                    }
+                }
+            }
+            .col-lg-4{
+                position: relative; //should use css instead of scss if use same style again
+                width: 100%;
+                padding: 0 15px;
+
+                @include break(md) {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+                @include break(mdlg) {
+                    flex: 0 0 calc(100%/2.4);
+                    max-width: calc(100%/2.4);
+                }
+
+                .filters {
+
+                    &.project_menu_item {
+                        @include break(mdlg, true) {
+                            margin: 0 0 20px;
+                        }
+                    }
+
+                    ul {
+                        list-style: none;
+                        
+                        li {
+                            display: inline-block;
+                            color: #83868c;
+                            font-size: 15px;
+                            text-transform: capitalize;
+                            margin: 0 22px;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: #00d089;
+                            }
+
+                            &.active {
+                                color: #00d089;
+                            }
+
+                            @include break(mdlg, true) {
+                                margin: 0 8px;
+                            }
+                        }
+                    }
+                }
+            }
+            .col-lg-5{
+                position: relative;
+                width: 100%;
+                padding: 0 15px;
+
+                @include break(md) {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+                @include break(mdlg) {
+                    flex: 0 0 calc(100%/4);
+                    max-width: calc(100%/4);
+                }
+
+                .more_btn {
+                    line-height: 1.5;
+
+                    &.d-none {
+                        display: none;
+                    }
+
+                    &.d-md-block {
+                        @include break(md) {
+                            display: block;
+                        }
+                    }
+
+                    .more_btn_inner {
+                        display: inline-block;
+                        border: 1px solid #00d089;                        
+                        padding: 15px 40px;                        
+                        color: #00d089;    
+                        text-decoration: none;
+                        font-size: 15px;            
+                        text-transform: capitalize;                                          
+                        border-radius: 50px;
+                        transition: .5s;
+
+                        &:hover {
+                            background-color: #00d089;
+                            color: #fff;
+                        }
+
+                        @include break(mdlg, true) {
+                            padding: 8px 24px;
+                            margin: 0 0 25px;
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+        .filters-content {
+            // display: unset;
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 -15px;
+
+                &.justify-content-between {
+                    justify-content: space-between;
+                }
+
+                .col-lg-6 {             
+                    position: relative;
+                    width: 100%;
+                    padding: 0 15px;
+
+                    @include break(sm) {
+                        flex: 0 0 50%;
+                        max-width: 50%;
+                    }
+
+                    .single_our_project {
+                        position: relative;
+                        z-index: 1;
+
+                        @include break(mdlg, ture) {
+                            margin: 0 0 20px;
+                        }
+
+                        &:hover {
+                            .single_offer {
+                                .hover_text {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+
+                        .single_offer {
+                            position: relative;
+                            z-index: 2;
+                            margin: 0 0 1.5em;
+
+                            img {
+                                width: 100%;
+                                height: auto;
+                                position: relative;
+                                vertical-align: middle;
+                            }
+                            .hover_text {
+                                position: absolute;
+                                bottom: 0;
+                                z-index: 10;
+                                opacity: 0;
+                                transition: .5s;
+                                background-color: #fff;
+                                padding: 20px 30px;
+                                left: 15px;
+                                right: 15px;
+
+                                p {
+                                    color: #848484;
+                                    font-size: 15px;
+                                    line-height: 2;
+                                    margin: 0 0 10px;
+                                }
+
+                                h2 {
+                                    color: #000000;
+                                    font-size: 24px;
+                                    margin: 0 0 .5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                .col-lg-7 {
+                    position: relative;
+                    width: 100%;
+                    padding: 0 15px;
+
+                    @include break(sm) {
+                        flex: 0 0 50%;
+                        max-width: 50%;
+                    }
+
+                    .single_our_project {
+                        position: relative;
+                        z-index: 1;
+
+                        @include break(mdlg, ture) {
+                            margin: 0 0 20px;
+                        }
+
+                        &:hover {
+                            .single_offer {
+                                .hover_text {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+
+                        .single_offer {
+                            position: relative;
+                            z-index: 2;      
+                            z-index: 2;
+                            margin: 0 0 1.5em;                      
+
+                            img {
+                                width: 100%;
+                                height: auto;
+                                position: relative;
+                                vertical-align: middle;
+                            }
+                            
+                            .hover_text {
+                                position: absolute;  
+                                bottom: 0;
+                                z-index: 10;
+                                opacity: 0;
+                                transition: .5s;
+                                background-color: #fff;
+                                padding: 20px 30px;
+                                left: 15px;
+                                right: 15px;
+
+                                p {
+                                    color: #848484;
+                                    font-size: 15px;
+                                    line-height: 2;
+                                    margin: 0 0 10px;
+                                }
+
+                                h2 {
+                                    color: #000000;
+                                    font-size: 24px;
+                                    margin: 0 0 .5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
