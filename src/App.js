@@ -12,7 +12,7 @@ import Work from "./components/Work/Work";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <Navbar />
       <Header />
       <AboutUs />
@@ -21,7 +21,8 @@ function App() {
       <ContactForm />
       <Footer />      
     </div>
-  );
+  )
+  
 }
 
 export default App;
