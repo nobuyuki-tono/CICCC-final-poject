@@ -80,6 +80,7 @@ section#our_project {
                     h2{
                         font-size: 46px;
                         line-height: 46px;
+                        font-weight: 700;
                         text-transform: capitalize;
                         margin: 0 0 .5rem;
 
@@ -179,10 +180,16 @@ section#our_project {
                         border: 1px solid #00d089;                        
                         padding: 15px 40px;                        
                         color: #00d089;    
-                        font-size: 15px;                    
+                        text-decoration: none;
+                        font-size: 15px;            
                         text-transform: capitalize;                                          
                         border-radius: 50px;
                         transition: .5s;
+
+                        &:hover {
+                            background-color: #00d089;
+                            color: #fff;
+                        }
 
                         @include break(mdlg, true) {
                             padding: 8px 24px;
@@ -194,7 +201,148 @@ section#our_project {
             }
         }
         .filters-content {
-            display: unset;
+            // display: unset;
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 -15px;
+
+                &.justify-content-between {
+                    justify-content: space-between;
+                }
+
+                .col-lg-6 {             
+                    position: relative;
+                    width: 100%;
+                    padding: 0 15px;
+
+                    @include break(sm) {
+                        flex: 0 0 50%;
+                        max-width: 50%;
+                    }
+
+                    .single_our_project {
+                        position: relative;
+                        z-index: 1;
+
+                        @include break(mdlg, ture) {
+                            margin: 0 0 20px;
+                        }
+
+                        &:hover {
+                            .single_offer {
+                                .hover_text {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+
+                        .single_offer {
+                            position: relative;
+                            z-index: 2;
+                            margin: 0 0 1.5em;
+
+                            img {
+                                width: 100%;
+                                height: auto;
+                                position: relative;
+                                vertical-align: middle;
+                            }
+                            .hover_text {
+                                position: absolute;
+                                bottom: 0;
+                                z-index: 10;
+                                opacity: 0;
+                                transition: .5s;
+                                background-color: #fff;
+                                padding: 20px 30px;
+                                left: 15px;
+                                right: 15px;
+
+                                p {
+                                    color: #848484;
+                                    font-size: 15px;
+                                    line-height: 2;
+                                    margin: 0 0 10px;
+                                }
+
+                                h2 {
+                                    color: #000000;
+                                    font-size: 24px;
+                                    margin: 0 0 .5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                .col-lg-7 {
+                    position: relative;
+                    width: 100%;
+                    padding: 0 15px;
+
+                    @include break(sm) {
+                        flex: 0 0 50%;
+                        max-width: 50%;
+                    }
+
+                    .single_our_project {
+                        position: relative;
+                        z-index: 1;
+
+                        @include break(mdlg, ture) {
+                            margin: 0 0 20px;
+                        }
+
+                        &:hover {
+                            .single_offer {
+                                .hover_text {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+
+                        .single_offer {
+                            position: relative;
+                            z-index: 2;      
+                            z-index: 2;
+                            margin: 0 0 1.5em;                      
+
+                            img {
+                                width: 100%;
+                                height: auto;
+                                position: relative;
+                                vertical-align: middle;
+                            }
+                            
+                            .hover_text {
+                                position: absolute;  
+                                bottom: 0;
+                                z-index: 10;
+                                opacity: 0;
+                                transition: .5s;
+                                background-color: #fff;
+                                padding: 20px 30px;
+                                left: 15px;
+                                right: 15px;
+
+                                p {
+                                    color: #848484;
+                                    font-size: 15px;
+                                    line-height: 2;
+                                    margin: 0 0 10px;
+                                }
+
+                                h2 {
+                                    color: #000000;
+                                    font-size: 24px;
+                                    margin: 0 0 .5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -2,33 +2,38 @@ import React, { useRef } from 'react';
 import './Work.scss';
 
 const Work = () => {
-    //for using ref
+    //using ref
     const project_type = useRef(null);
     const project_type_2 = useRef(null);
     const project_type_3 = useRef(null);
 
+    const column_1 = useRef(null)
+    const column_2 = useRef(null)
+
+    console.log("colum: ", column_1.current)
     let projectArr = [project_type, project_type_2, project_type_3];
     
-    console.log('array: ', projectArr)
-    const toggleProject = () => {
+    const toggleProject = (key, colum) => {
+        projectArr.reduce((acc, cur) => cur.current.classList.remove('active'), 0)
+        projectArr.filter( pt => pt.current === key.current).reduce((acc, cur) => cur.current.classList.add('active') , 0)
 
-        for(let i = 0; i < projectArr.length; i++) {
-            projectArr[i].current.classList.remove('active')
+        if(column_1 === colum) {
+            column_1.current.removeAttribute('style')
+            column_2.current.setAttribute('style', 'display: none')
+        }else if(column_2 === colum) {
+            column_2.current.removeAttribute('style')
+            column_1.current.setAttribute('style', 'display: none')
+        }else {            
+            column_1.current.removeAttribute('style')
+            column_2.current.removeAttribute('style')
         }
 
-        console.log("1: ", project_type)
-        console.log("2: ", project_type_2)
-        console.log("3: ", project_type_3)
-        // if(elem.contains('active')) {
-            
+
+        // if(column_2.current.getAttribute('style') == null  ) {
+        //     column_2.current.setAttribute('style', 'display: none')
         // }else {
-        //     elem.add('active')
+        //     column_2.current.removeAttribute('style')
         // }
-        // console.log(project_type.current)
-    }
-    function toggleProject2(param) {
-        console.log('aaaaaa')
-        console.log('param', param)
     }
 
     return(
@@ -45,9 +50,9 @@ const Work = () => {
                     <div className="col-lg-4">
                         <div className="filters project_menu_item">
                             <ul>
-                                <li  onClick={() => toggleProject2(this)}>all</li>
-                                <li ref={project_type_2} onClick={toggleProject}>web design</li>
-                                <li className="active" ref={project_type_3} onClick={toggleProject}>mobile app</li>
+                                <li className="active" ref={project_type} onClick={() => toggleProject(project_type)}>all</li>
+                                <li ref={project_type_2} onClick={() => toggleProject(project_type_2, column_1)}>web design</li>
+                                <li ref={project_type_3} onClick={() => toggleProject(project_type_3, column_2)}>mobile app</li>
                             </ul>
                         </div>
                     </div>
@@ -59,7 +64,36 @@ const Work = () => {
                         </div>
                     </div>
                 </div>
-                <div className="filters-content"></div>
+                <div className="filters-content">
+                    <div className="row justify-content-between">
+                        <div ref={column_1} className="col-lg-6" style={{display: ''}}>
+                            <div className="single_our_project">
+                                <div className="single_offer">
+                                    <img src="https://placehold.jp/555x410.png" alt=""/>
+                                    <div className="hover_text">
+                                        <p>Web design</p>
+                                        <a href="#web-design">
+                                            <h2>Web design & development</h2>
+                                        </a>
+                                    </div>
+                                </div>                               
+                            </div>               
+                        </div>
+                        <div ref={column_2} className="col-lg-7" style={{display: ''}}>
+                        <div className="single_our_project">
+                                <div className="single_offer">
+                                    <img src="https://placehold.jp/556x411.png" alt=""/>
+                                    <div className="hover_text">
+                                        <p>Mobile app</p>
+                                        <a href="#mobile-app">
+                                            <h2>Mobile app & development</h2>
+                                        </a>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         </>
