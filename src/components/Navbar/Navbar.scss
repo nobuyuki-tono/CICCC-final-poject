@@ -9,7 +9,6 @@
       transform: translate3d(0, 0, 0);
     }
 }
-$menu_Height: 74px;
 
 header.main_menu {
     position: absolute;
@@ -24,10 +23,23 @@ header.main_menu {
 
     &.menu_fixed {       
         position: fixed;    
-        z-index: 2;
-        height: $menu_Height;        
+        z-index: 2;        
         background-color: #00d089;        
-        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);                        
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
+
+        .container {
+            .row{
+                .col-lg-2 {
+                    .navbar {
+                        .navbar-collapse {
+                            @include break(mdlg, true) {
+                                box-shadow: 0px 3px 5px #888888; 
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .container {
@@ -160,7 +172,7 @@ header.main_menu {
                             left: 0;
                             top: 71px;
                             width: 100%;                            
-                            background-color: #fff;                                                       
+                            background-color: #fff;                            
                             // text-align: center;
                         }
                         @include break(mdlg) {

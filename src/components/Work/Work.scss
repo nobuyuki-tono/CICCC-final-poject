@@ -3,6 +3,10 @@
 section#our_project {
     position: relative;
 
+    .hide {
+        display: none;
+    }
+
     &.section_padding {
         padding: 140px 0;
 
