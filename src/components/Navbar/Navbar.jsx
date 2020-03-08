@@ -6,16 +6,9 @@ const Navbar = () => {
     // for fixed menu bar
     // I used window.pageYOffset instead of scrollTop
     window.onscroll = () => {
-        let menu = document.getElementsByClassName('main_menu')[0];  
-              
-        if (window.pageYOffset > 148) {
-            menu.classList.add("menu_fixed");
-            menu.classList.add("animate");
-        } else {
-            menu.classList.remove("menu_fixed");
-            menu.classList.remove("animate");
-        }
-      }
+        let menu = document.getElementsByClassName('main_menu')[0];              
+        window.pageYOffset > 148 ? menu.classList.add("menu_fixed", "animate") : menu.classList.remove("menu_fixed", "animate");
+    }
 
     //for using ref
     const navMenu = useRef(null);

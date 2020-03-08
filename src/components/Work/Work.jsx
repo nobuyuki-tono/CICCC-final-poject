@@ -6,34 +6,19 @@ const Work = () => {
     const project_type = useRef(null);
     const project_type_2 = useRef(null);
     const project_type_3 = useRef(null);
-
-    const column_1 = useRef(null)
-    const column_2 = useRef(null)
-
-    console.log("colum: ", column_1.current)
     let projectArr = [project_type, project_type_2, project_type_3];
     
+    const column_1 = useRef(null)
+    const column_2 = useRef(null)    
+    
     const toggleProject = (key, colum) => {
+        const isColumnSame = column_1 === colum;
+        
         projectArr.reduce((acc, cur) => cur.current.classList.remove('active'), 0)
         projectArr.filter( pt => pt.current === key.current).reduce((acc, cur) => cur.current.classList.add('active') , 0)
 
-        if(column_1 === colum) {
-            column_1.current.removeAttribute('style')
-            column_2.current.setAttribute('style', 'display: none')
-        }else if(column_2 === colum) {
-            column_2.current.removeAttribute('style')
-            column_1.current.setAttribute('style', 'display: none')
-        }else {            
-            column_1.current.removeAttribute('style')
-            column_2.current.removeAttribute('style')
-        }
-
-
-        // if(column_2.current.getAttribute('style') == null  ) {
-        //     column_2.current.setAttribute('style', 'display: none')
-        // }else {
-        //     column_2.current.removeAttribute('style')
-        // }
+        isColumnSame ? column_2.current.classList.add('hide') : column_2 === colum ? column_1.current.classList.add('hide') : column_1.current.classList.remove('hide');
+        isColumnSame ? column_1.current.classList.remove('hide') : column_2.current.classList.remove('hide');
     }
 
     return(
