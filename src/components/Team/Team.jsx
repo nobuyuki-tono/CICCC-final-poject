@@ -4,7 +4,7 @@ import "./Team.scss";
 
 const Team = () => {
   return (
-    <section className="team">
+    <section id="team" className="team">
       <h3>Our team</h3>
       <p>Shin Daimon - Fullstack web developer</p>
       <p>Tatsuya Takarabe - Fullstack web developer</p>
